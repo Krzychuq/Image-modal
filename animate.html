@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="animate.css">
+    <script src="jquery-3.6.3.min.js"></script>
+    <title>Animation</title>
+
+</head>
+<body>
+<div class='contener'>
+    <section class='modal'>
+        <div>
+            <button type='button' class='przycisk' id='but1'>X</button>
+        </div>
+        <img id='modalPic' alt="picture">
+    </section>
+    <section class='pictures'>
+        <div class='pic'>
+            <img class='zdjecie' src="photos/1.jpg" alt="couch">
+            <p>Couch</p>
+        </div>
+
+            <div class='pic'>
+                <img class='zdjecie' src="photos/2.jpg"  alt="aquarium">
+                <p>Aquarium</p>
+            </div>
+
+        <div class='pic'>
+            <img class='zdjecie' src="photos/3.jpg"  alt="car">
+            <p>Car</p>
+        </div>
+    </section>
+</div>
+</body>
+</html>
+<script>
+$('#but1').on("click", function(){
+    $(".modal").fadeOut("slow");
+});
+$(".zdjecie").click(function(){
+    var photo = $(this).attr("src");
+    $(".modal").fadeIn(300);
+    $("#modalPic").attr('src',photo);
+});
+</script>
